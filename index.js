@@ -1,7 +1,10 @@
 const express = require("express")
 const app = express()
-const port = 3000
 
-app.get("/", (req, res) => res.send("Hello world!"))
+var PORT = process.env.PORT || 3000;
 
-app.listen(port, () => console.log("Listening at PORT 3000"))
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.listen(PORT, () => console.log("Listening at PORT: " + PORT))
