@@ -12,7 +12,46 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
+
 <body>
+  <div class="jumbotron text-center mr-5 ml-5">
+    <h1>Hot Restaurant</h1>
+    <hr>
+    <h3>Make Your Reservation</h3>
+    <div>
+      <button class="btn btn-primary">View Tables</button>
+      <button class="btn btn-light">Home</button>
+    </div>
+  </div>
+  <div class="card mr-5 ml-5">
+    <div class="card-header">
+      Table Reservation
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="resName">Name</label>
+          <input type="text" class="formControl" id="resName">
+        </div>
+        <div class="form-group">
+          <label for="resPhoneNumber">Phone Number</label>
+          <input type="text" class="formControl" id="resPhoneNumber">
+        </div>
+        <div class="form-group">
+          <label for="resEmail">Email</label>
+          <input type="email" class="formControl" id="resEmail">
+        </div>
+        <div class="form-group">
+          <label for="resUniqueID">Unique ID</label>
+          <input type="text" class="formControl" id="resUniqueID">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div>
+    <p class="ml-5"><a href="#">API Table Link</a> | <a href="#">API Wait List</a>
+  </div>
   
 </body>
 </html>
