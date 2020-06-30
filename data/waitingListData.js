@@ -1,7 +1,7 @@
 let waitingListDataArray = [
   {
     customerName: "Brian",
-    customerPhoneNumber: 2345678,
+    customerPhoneNumber: "111-234-5678",
     customerEmail: "nono0@nono.nono",
     customerUniqueID: "online"
   }
