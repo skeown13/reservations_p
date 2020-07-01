@@ -46,7 +46,7 @@
           <label for="resUniqueID">Unique ID</label>
           <input type="text" class="formControl" id="resUniqueID">
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary submit">Submit</button>
       </form>
     </div>
   </div>
@@ -55,4 +55,38 @@
   </div>
   
 </body>
+
 </html>
+
+<script type="text/javascript">
+  
+  $(".submit").click(function(event){
+    event.preventDefault()
+
+    let newReservation = {
+      customerName: $("#resName").val().trim(),
+      customerPhoneNumber: $("#resPhoneNumber").val().trim(),
+      customerEmail: $("#resEmail").val().trim(),
+      customerUniqueID: $("#resUniqueID").val().trim()
+    }
+
+    console.log(newReservation)
+
+    $.post("api/tables", newReservation, function(data) {
+      if (data) {
+        alert("Yay! You got yourself a table!")
+      } else {
+        alert("Sorry... No table for you. But you are on the Waiting List!")
+      }
+
+      // Clear all the input fields
+      $("#resName").val("")
+      $("#resPhoneNumber").val("")
+      $("#resEmail").val("")
+      $("#resUniqueID").val("")
+    })
+
+  })
+
+
+</script>
