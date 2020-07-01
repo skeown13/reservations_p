@@ -51,7 +51,7 @@
 <script type="text/javascript">
   $.ajax({
     url: "api/tables",
-    method: GET
+    method: "GET"
   })
   .then(function(tablesData){
     console.log(tablesData)
@@ -76,7 +76,7 @@
 
   $.ajax({
     url: "api/waitingList",
-    method: GET
+    method: "GET"
   })
   .then(function(waitingData){
     console.log(waitingData)
