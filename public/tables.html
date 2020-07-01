@@ -45,4 +45,33 @@
     <p class="ml-5"><a href="#">Clear Table</a> | <a href="api/tables">API Table Link</a> | <a href="api/waitingList">API Wait List</a>
   </div>
 </body>
+
+<script type="text/javascript">
+  $.ajax({
+    url: "api/tables",
+    method: GET
+  })
+  .then(function(tablesData){
+    console.log(tablesData)
+
+    for (let i = 0; i < tablesData.length; i++) {
+      let currentReservations = $("#currentReservations")
+
+      let listItem = $("<li class='tableItem'>")
+      
+      listItem.append(
+        $("<h2>").text("Table: " + (i + 1)),
+        $("<hr>"),
+        $("<h2>").text("Unique ID: " + tablesData[i].resUniqueID),
+        $("<h2>").text("Name: " + tablesData[i].resName),
+        $("<h2>").text("Email: " + tablesData[i].resEmail),
+        $("<h2>").text("Phone Number: " + tablesData[i].resPhoneNumber),
+      )
+
+      currentReservations.append(listItem)
+    }
+  })
+</script>
+
+
 </html>
